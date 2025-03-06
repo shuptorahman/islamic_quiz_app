@@ -38,22 +38,14 @@ class GradientContainer extends StatelessWidget {
             ),
             SizedBox(height: 20),
             //showing button
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    Colors.deepPurple,
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(10),
-                ),
-              ),
+            OutlinedButton(
               onPressed: () {},
               child: Text(
                 'Start Quiz',
-                style: (TextStyle(
+                style: TextStyle(
                   fontSize: 22,
                   color: Colors.white,
-                )),
+                ),
               ),
             ),
           ],
