@@ -15,6 +15,50 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
+      child: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 200),
+
+            //showing logo
+            Image.asset(
+              'assets/images/LOGO QUIZ.png',
+              height: 250,
+              width: 250,
+            ),
+            SizedBox(height: 40),
+
+            //showing text
+            Text(
+              "Islamic Quiz App!",
+              style: TextStyle(
+                fontSize: 28,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+            //showing button
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Colors.deepPurple,
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                'Start Quiz',
+                style: (TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                )),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
