@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_quiz_app/answer_button.dart';
+import 'package:islamic_quiz_app/database/question_data.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -10,6 +11,7 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  final currentQuestion = questions[0];
   @override
   Widget build(context) {
     return SizedBox(
@@ -20,26 +22,30 @@ class _QuizScreenState extends State<QuizScreen> {
         children: [
           //question goes here
           Text(
-            "Question 1",
+            currentQuestion.question,
             style: TextStyle(color: Colors.white),
           ),
           SizedBox(height: 20),
           //answer buttons below
           AnswerButton(
-            answerText: "answerText 1",
+            answerText:
+                currentQuestion.answers[0],
             onTap: () {},
           ),
           AnswerButton(
-            answerText: "answerText 2",
+            answerText:
+                currentQuestion.answers[1],
             onTap: () {},
           ),
 
           AnswerButton(
-            answerText: "answerText 3 ",
+            answerText:
+                currentQuestion.answers[2],
             onTap: () {},
           ),
           AnswerButton(
-            answerText: "answerText 4",
+            answerText:
+                currentQuestion.answers[3],
             onTap: () {},
           ),
         ],
