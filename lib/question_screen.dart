@@ -3,7 +3,12 @@ import 'package:islamic_quiz_app/answer_button.dart';
 import 'package:islamic_quiz_app/database/question_data.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  const QuizScreen({
+    required this.onSelectAnswer,
+    super.key,
+  });
+  final void Function(String answer)
+  onSelectAnswer;
   @override
   State<StatefulWidget> createState() {
     return _QuizScreenState();
@@ -13,7 +18,8 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String onSelectAnswer) {
+    widget.onSelectAnswer(onSelectAnswer);
     // currentQuestionIndex =
     //     currentQuestionIndex + 1;
 
@@ -52,7 +58,9 @@ class _QuizScreenState extends State<QuizScreen> {
                 .map((answer) {
                   return AnswerButton(
                     answerText: answer,
-                    onTap: answerQuestion,
+                    onTap: () {
+                      answerQuestion(answer);
+                    },
                   );
                 }),
           ],

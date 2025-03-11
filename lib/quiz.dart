@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_quiz_app/database/question_data.dart';
 import 'package:islamic_quiz_app/question_screen.dart';
 import 'start_screen.dart';
 
@@ -12,6 +13,8 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  List<String> selectedAnswers = [];
+
   var activeScreen = 'HomeScreen';
 
   void switchScreen() {
@@ -20,13 +23,27 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+
+    if (selectedAnswers.length ==
+        questions.length) {
+      setState(() {
+        activeScreen = 'HomeScreen';
+      });
+    }
+  }
+
   @override
   Widget build(context) {
     Widget screenWidget = StartScreen(
       switchScreen,
     );
     if (activeScreen == 'QuestionScreen') {
-      screenWidget = QuizScreen();
+      selectedAnswers = [];
+      screenWidget = QuizScreen(
+        onSelectAnswer: chooseAnswer,
+      );
     }
 
     return MaterialApp(
