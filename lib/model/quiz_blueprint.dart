@@ -5,4 +5,10 @@ class QuizBlueprint {
   );
   final String question;
   final List<String> answers;
+
+  List<String> getShuffledAns() {
+    final shuffledAnswer = List.of(answers);
+    shuffledAnswer.shuffle();
+    return shuffledAnswer;
+  }
 }

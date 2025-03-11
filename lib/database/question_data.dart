@@ -5,14 +5,14 @@ var questions = [
     //first answer is the always the correct answer
     ' Which of the following is not an example of Major Shirk?',
     [
-      'Showing off',
-      'Asking help from a Prophet',
-      'Going to a pious person’s grave for blessings',
-      'Denying Allah & His religion',
+      "Showing off",
+      " Asking help from a Prophet",
+      "Going to a pious person's grave for blessings",
+      "Denying Allah & His religion",
     ],
   ),
   QuizBlueprint(
-    "What does Allah’s name Al-Mu’izz mean?",
+    "What does Allah's name Al-Mu'izz mean?",
     [
       "The One who honours",
       "The One who dishonours",
@@ -76,7 +76,7 @@ var questions = [
   ]),
 
   QuizBlueprint(
-    "What does Allah’s name Al-Ghani mean?",
+    "What does Allah's name Al-Ghani mean?",
     [
       "The Independant",
       "The Giver",
