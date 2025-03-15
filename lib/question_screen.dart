@@ -7,6 +7,7 @@ class QuizScreen extends StatefulWidget {
     required this.onSelectAnswer,
     super.key,
   });
+
   final void Function(String answer)
   onSelectAnswer;
   @override

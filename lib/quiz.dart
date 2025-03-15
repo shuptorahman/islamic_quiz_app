@@ -47,7 +47,14 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'ResultScreen') {
-      screenWidget = ResultScreen();
+      screenWidget = ResultScreen(
+        choosenAnswers: selectedAnswers,
+      );
+    }
+    if (activeScreen == 'retry') {
+      screenWidget = QuizScreen(
+        onSelectAnswer: chooseAnswer,
+      );
     }
 
     return MaterialApp(
