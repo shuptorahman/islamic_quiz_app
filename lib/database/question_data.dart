@@ -3,7 +3,7 @@ import 'package:islamic_quiz_app/model/quiz_blueprint.dart';
 var questions = [
   QuizBlueprint(
     //first answer is the always the correct answer
-    ' Which of the following is not an example of Major Shirk?',
+    'Which of the following is not an example of Major Shirk?',
     [
       "Showing off",
       " Asking help from a Prophet",
@@ -11,15 +11,12 @@ var questions = [
       "Denying Allah & His religion",
     ],
   ),
-  QuizBlueprint(
-    "What does Allah's name Al-Mu'izz mean?",
-    [
-      "The One who honours",
-      "The One who dishonours",
-      "The One who will judge",
-      "The One who sees it all",
-    ],
-  ),
+  QuizBlueprint("What does Allah's name Al-Mu'izz mean?", [
+    "The One who honours",
+    "The One who dishonours",
+    "The One who will judge",
+    "The One who sees it all",
+  ]),
 
   QuizBlueprint("What does Zam Zam mean?", [
     "Stop",
@@ -75,15 +72,12 @@ var questions = [
     "A door",
   ]),
 
-  QuizBlueprint(
-    "What does Allah's name Al-Ghani mean?",
-    [
-      "The Independant",
-      "The Giver",
-      "The Protector",
-      "The Wise",
-    ],
-  ),
+  QuizBlueprint("What does Allah's name Al-Ghani mean?", [
+    "The Independant",
+    "The Giver",
+    "The Protector",
+    "The Wise",
+  ]),
 
   QuizBlueprint(
     "Which Angel will blow the horn to signal the Day of Judgement?",

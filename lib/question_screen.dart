@@ -8,8 +8,7 @@ class QuizScreen extends StatefulWidget {
     super.key,
   });
 
-  final void Function(String answer)
-  onSelectAnswer;
+  final void Function(String answer) onSelectAnswer;
   @override
   State<StatefulWidget> createState() {
     return _QuizScreenState();
@@ -32,38 +31,36 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(context) {
-    final currentQuestion =
-        questions[currentQuestionIndex];
+    final currentQuestion = questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
       child: Container(
         margin: EdgeInsets.all(40),
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center,
-          crossAxisAlignment:
-              CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             //question goes here
             Text(
               currentQuestion.question,
               style: TextStyle(
+                fontSize: 18,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
             //answer buttons below
-            ...currentQuestion
-                .getShuffledAns()
-                .map((answer) {
-                  return AnswerButton(
-                    answerText: answer,
-                    onTap: () {
-                      answerQuestion(answer);
-                    },
-                  );
-                }),
+            ...currentQuestion.getShuffledAns().map((
+              answer,
+            ) {
+              return AnswerButton(
+                answerText: answer,
+                onTap: () {
+                  answerQuestion(answer);
+                },
+              );
+            }),
           ],
         ),
       ),

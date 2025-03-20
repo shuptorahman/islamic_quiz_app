@@ -6,7 +6,8 @@ import 'package:islamic_quiz_app/question_summary.dart';
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
-    required this.choosenAnswers,required this.onRestart,
+    required this.choosenAnswers,
+    required this.onRestart,
   });
 
   final void Function() onRestart;
@@ -15,11 +16,7 @@ class ResultScreen extends StatelessWidget {
   List<Map<String, Object>> getSummaryData() {
     List<Map<String, Object>> summary = [];
 
-    for (
-      var i = 0;
-      i < choosenAnswers.length;
-      i++
-    ) {
+    for (var i = 0; i < choosenAnswers.length; i++) {
       summary.add({
         'question_index': i,
         'question': questions[i].question,
@@ -45,33 +42,33 @@ class ResultScreen extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(40),
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "You answered $numCorrectAnswers out $numTotalQuestions questions correctly",
               style: GoogleFonts.lato(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 24,
                 color: const Color.fromARGB(
                   255,
-                  201,
-                  199,
-                  200,
+                  179,
+                  248,
+                  5,
                 ),
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 30),
-            QuestionSummary(
-              summaryData: summaryData,
-            ),
+            QuestionSummary(summaryData: summaryData),
             SizedBox(height: 30),
             TextButton.icon(
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
               ),
-              icon: Icon(Icons.refresh),
+              icon: Icon(
+                Icons.refresh,
+                color: Colors.white,
+              ),
               onPressed: onRestart,
               label: Text(
                 "Restart Quiz",

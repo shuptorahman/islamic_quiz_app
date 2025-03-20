@@ -76,14 +76,34 @@ class QuestionSummary extends StatelessWidget {
                             Text(
                               data['user_answer'] as String,
                               style: GoogleFonts.lato(
-                                color: Colors.white,
+                                color:
+                                    data['user_answer'] ==
+                                            data['correct_answer']
+                                        ? const Color.fromARGB(
+                                          255,
+                                          179,
+                                          248,
+                                          5,
+                                        )
+                                        : const Color.fromARGB(
+                                          255,
+                                          244,
+                                          83,
+                                          160,
+                                        ),
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               data['correct_answer']
                                   as String,
                               style: GoogleFonts.lato(
-                                color: Colors.green,
+                                color: const Color.fromARGB(
+                                  255,
+                                  179,
+                                  248,
+                                  5,
+                                ),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
