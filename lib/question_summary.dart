@@ -18,10 +18,9 @@ class QuestionSummary extends StatelessWidget {
           children:
               summaryData.map((data) {
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(
-                        vertical: 8,
-                      ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
                   child: Row(
                     crossAxisAlignment:
                         CrossAxisAlignment.start,
@@ -30,8 +29,7 @@ class QuestionSummary extends StatelessWidget {
                         height: 30,
                         width: 30,
 
-                        alignment:
-                            Alignment.center,
+                        alignment: Alignment.center,
                         decoration: BoxDecoration(
                           color:
                               data['user_answer'] ==
@@ -49,18 +47,14 @@ class QuestionSummary extends StatelessWidget {
                                     156,
                                   ),
                           borderRadius:
-                              BorderRadius.circular(
-                                100,
-                              ),
+                              BorderRadius.circular(100),
                         ),
                         child: Text(
-                          ((data['question_index']
-                                      as int) +
+                          ((data['question_index'] as int) +
                                   1)
                               .toString(),
                           style: GoogleFonts.lato(
-                            fontWeight:
-                                FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -68,48 +62,30 @@ class QuestionSummary extends StatelessWidget {
                       Expanded(
                         child: Column(
                           crossAxisAlignment:
-                              CrossAxisAlignment
-                                  .start,
+                              CrossAxisAlignment.start,
                           children: [
                             Text(
-                              data['question']
-                                  as String,
-                              style:
-                                  GoogleFonts.lato(
-                                    fontWeight:
-                                        FontWeight
-                                            .bold,
-                                    fontSize: 16,
-                                    color:
-                                        Colors
-                                            .white,
-                                  ),
+                              data['question'] as String,
+                              style: GoogleFonts.lato(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                            const SizedBox(height: 5),
                             Text(
-                              data['user_answer']
-                                  as String,
-                              style:
-                                  GoogleFonts.lato(
-                                    color:
-                                        Colors
-                                            .white,
-                                  ),
+                              data['user_answer'] as String,
+                              style: GoogleFonts.lato(
+                                color: Colors.white,
+                              ),
                             ),
                             Text(
                               data['correct_answer']
                                   as String,
-                              style:
-                                  GoogleFonts.lato(
-                                    color:
-                                        Colors
-                                            .green,
-                                    fontWeight:
-                                        FontWeight
-                                            .bold,
-                                  ),
+                              style: GoogleFonts.lato(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),

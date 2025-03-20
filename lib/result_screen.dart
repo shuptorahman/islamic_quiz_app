@@ -4,12 +4,14 @@ import 'package:islamic_quiz_app/database/question_data.dart';
 import 'package:islamic_quiz_app/question_summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  ResultScreen({
+  const ResultScreen({
     super.key,
-    required this.choosenAnswers,
+    required this.choosenAnswers,required this.onRestart,
   });
 
-  List<String> choosenAnswers;
+  final void Function() onRestart;
+
+  final List<String> choosenAnswers;
   List<Map<String, Object>> getSummaryData() {
     List<Map<String, Object>> summary = [];
 
@@ -70,7 +72,7 @@ class ResultScreen extends StatelessWidget {
                 foregroundColor: Colors.white,
               ),
               icon: Icon(Icons.refresh),
-              onPressed: () {},
+              onPressed: onRestart,
               label: Text(
                 "Restart Quiz",
                 style: TextStyle(fontSize: 24),

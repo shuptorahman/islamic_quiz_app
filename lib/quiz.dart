@@ -27,8 +27,7 @@ class _QuizState extends State<Quiz> {
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
 
-    if (selectedAnswers.length ==
-        questions.length) {
+    if (selectedAnswers.length == questions.length) {
       setState(() {
         activeScreen = 'ResultScreen';
       });
@@ -37,23 +36,24 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(
-      switchScreen,
-    );
+    Widget screenWidget = StartScreen(switchScreen);
     if (activeScreen == 'QuestionScreen') {
       screenWidget = QuizScreen(
         onSelectAnswer: chooseAnswer,
       );
     }
 
+    void restartQuiz() {
+      setState(() {
+        selectedAnswers = [];
+        activeScreen = 'QuestionScreen';
+      });
+    }
+
     if (activeScreen == 'ResultScreen') {
       screenWidget = ResultScreen(
         choosenAnswers: selectedAnswers,
-      );
-    }
-    if (activeScreen == 'retry') {
-      screenWidget = QuizScreen(
-        onSelectAnswer: chooseAnswer,
+        onRestart: restartQuiz,
       );
     }
 
